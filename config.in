@@ -1,0 +1,42 @@
+class Environment:
+    run = __run__
+    seed = __seed__
+    geometry_filename = "__geometry_filename__"
+    beam_filename = "__beam_filename__"
+    n_spills = __n_spills__
+    output_filename = "__output_filename__"
+    z_position = __z_position__
+    tof0_offset = __tof0_offset__
+    tof1_offset = __tof1_offset__
+
+keep_tracks = True
+
+simulation_geometry_filename = Environment.geometry_filename
+spill_generator_number_of_spills = Environment.n_spills
+output_root_file_name = Environment.output_filename
+input_root_file_name = "maus_simulation.root"
+
+# run control
+verbose_level = 1
+# scifi
+SciFiConfigDir = "/home/astg/scarf148/MAUS/work/2014-11-26_measurement-of-magnet-alignment/full-mc/calib/"
+SciFiMappingFileName = str(Environment.run)+"/scifi_mapping.txt"
+SciFiCalibrationFileName = str(Environment.run)+"/scifi_calibration.txt"
+SciFiBadChannelsFileName = str(Environment.run)+"/scifi_bad_channels.txt"
+SciFiParams_Density = 2.0
+beam = {
+}
+smear_and_sample = {
+    "n_events_per_spill":100,
+    "input_file":Environment.beam_filename,
+    "n_momentum_slices":10,
+    "momentum_min":135.,
+    "momentum_max":145.,
+    "z_position":Environment.z_position,
+    "seed":Environment.seed,
+    "tof0_offset":Environment.tof0_offset,
+    "tof1_offset":Environment.tof1_offset,
+}
+
+
+SciFiNPECut = 4.0
