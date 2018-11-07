@@ -1,2 +1,26 @@
 MICE Hybrid Monte Carlo software to be used on the Grid.
 Forked from Chris Rogers https://github.com/chrisrogers1234/systematics_mc/
+
+Instructions:
+============
+
+- Check out https://launchpad.net/maus/trunk
+- merge with https://code.launchpad.net/~francois-drielsma/maus/tof-tracker-combined-fit
+- build
+- source ~/MAUS/merge/env.sh (or whatever)
+
+ git clone https://github.com/pfranchini/MICE-hybrid-mc.git MICE-hybrid-mc
+ cd MICE-hybrid-mc
+ mkdir work
+ cd work
+ 
+ mkdir geometry_10069
+ python ${MAUS_ROOT_DIR}/bin/utilities/download_geometry.py --geometry_download_by run_number --geometry_download_run_number 10069 --geometry_download_directory=geometry_10069
+ 
+ python ~/MAUS/merge/src/common_py/calibration/get_scifi_calib.py --SciFiCalibMethod "Run" --SciFiCalibSrc 10069 --SciFiConfigDir calib-10069/
+ cd ..
+
+ - edit config.in to point to calib-10069/
+
+ export OPENBLAS_NUM_THREADS=4
+ python scripts/run_all.py 

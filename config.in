@@ -19,7 +19,8 @@ input_root_file_name = "maus_simulation.root"
 # run control
 verbose_level = 1
 # scifi
-SciFiConfigDir = "/home/astg/scarf148/MAUS/work/2014-11-26_measurement-of-magnet-alignment/full-mc/calib/"
+#SciFiConfigDir = "/home/astg/scarf148/MAUS/work/2014-11-26_measurement-of-magnet-alignment/full-mc/calib/"
+SciFiConfigDir = "/home/phswbb/MICE-hybrid-mc/work/calib-10069"
 SciFiMappingFileName = str(Environment.run)+"/scifi_mapping.txt"
 SciFiCalibrationFileName = str(Environment.run)+"/scifi_calibration.txt"
 SciFiBadChannelsFileName = str(Environment.run)+"/scifi_bad_channels.txt"
