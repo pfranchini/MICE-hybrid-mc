@@ -6,14 +6,14 @@ Instructions:
 
 - Check out https://launchpad.net/maus/trunk
 - merge with https://code.launchpad.net/~francois-drielsma/maus/tof-tracker-combined-fit
-- build
+- build the trunk
 - source ~/MAUS/merge/env.sh (or whatever)
 
  git clone https://github.com/pfranchini/MICE-hybrid-mc.git MICE-hybrid-mc
  cd MICE-hybrid-mc
  mkdir work
+
  cd work
- 
  mkdir geometry_10069
  python ${MAUS_ROOT_DIR}/bin/utilities/download_geometry.py --geometry_download_by run_number --geometry_download_run_number 10069 --geometry_download_directory=geometry_10069
  
